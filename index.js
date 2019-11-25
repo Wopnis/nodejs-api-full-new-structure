@@ -1,5 +1,6 @@
 const express = require('express');
 const router = require('./routers/router');
+const cityRouter = require ('./routers/city_route');
 const mongoose = require('mongoose');
 
 
@@ -10,7 +11,9 @@ const app = express();
 const port = process.env.PORT || 8000 ;
 app.use(express.json()) ;
 
-app.use(router);
+app.use('/users',router);
+
+app.use('/cities',cityRouter);
 
 
 
